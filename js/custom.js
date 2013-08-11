@@ -27,9 +27,6 @@ $(document).ready(function()
     checkboxes.on('ifUnchecked', function(){
         $(this).val('off');
     });
-    radios.on('ifChanged', function(){
-        $(this).val($(this).val());
-    });
 
     $('#select_all').click(function(e)
     {

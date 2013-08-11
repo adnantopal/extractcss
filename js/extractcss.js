@@ -103,7 +103,7 @@ var extractCSS = {
             {
                 allIDsTmp[ split[i] ] = 1;
 
-                if (i == '0' && $(data).find('#'+split[i]+' > *').length && options.extractChildren === 'on')
+                if (i == '0' && split[i].length > 0 && $(data).find('#'+split[i]+' > *').length && options.extractChildren === 'on')
                 {
                     $.each($(data).find('#'+split[i]+' > *'), function()
                     {
