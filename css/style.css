@@ -104,6 +104,9 @@ header > .container:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+#content .input {
+    margin-right: -4px;
+}
 #content .input h3, #content .output h3, #content .options h3 {
     position: relative;
     margin: 0;
