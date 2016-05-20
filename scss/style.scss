@@ -1,0 +1,262 @@
+$theme: #48CFAD;
+$theme-dark: #37bc9b;
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  color: #434A54;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+a {
+  color: $theme-dark;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.Logo {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -1px;
+
+  a {
+    color: $theme;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(black, 0.05);
+  }
+}
+
+.Options,
+.Share {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Options {
+  margin: 0 40px;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 30px;
+    padding: 15px 20px;
+    border: 1px #f5f5f5 solid;
+    border-radius: 3px;
+  }
+
+  &__title {
+    position: absolute;
+    left: 12px;
+    top: -16px;
+    padding: 6px;
+    line-height: 1;
+    background-color: #fff;
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    flex: 1 1 50%;
+    align-items: center;
+    margin: 2px 0;
+    font-size: 14px;
+    cursor: pointer;
+
+    &.radio {
+      input {
+        &:checked + span {
+          &:after {
+            border-radius: 50%;
+          }
+        }
+      }
+
+      span {
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    input {
+      width: 24px;
+      visibility: hidden;
+
+      &:checked + span {
+        &:after {
+          content: '';
+          position: absolute;
+          left: 4px;
+          top: 50%;
+          width: 10px;
+          height: 10px;
+          margin-top: -6px;
+          background-image: linear-gradient(180deg, #49e4c2, $theme-dark);
+          border-radius: 1px;
+        }
+      }
+    }
+
+    span {
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 18px;
+        height: 18px;
+        margin-top: -10px;
+        background-color: #434a54;
+        border-radius: 3px;
+      }
+    }
+
+    small {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      color: #fff;
+      line-height: 14px;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      background-color: #ccc;
+      border-radius: 50%;
+    }
+  }
+
+  button {
+    padding: 8px 28px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    text-shadow: 0 1px 0 rgba(black, 0.1);
+    background-color: $theme-dark;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+.addthis_toolbox {
+  margin-top: 2px;
+
+  a {
+    margin-bottom: 0 !important;
+  }
+}
+.Donation {
+  margin-left: 20px;
+}
+
+main {
+  display: flex;
+  flex: 1 auto;
+  padding: 30px 15px;
+  background: #fafafa;
+}
+.Input,
+.Output {
+  width: 50%;
+  padding: 0 15px;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+textarea {
+  flex: 1 auto;
+}
+.CodeMirror {
+  font-size: 0.8em;
+  border: 1px #eeeeee solid;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  font-size: 13px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.tooltip {
+  position: relative;
+
+  &:before,
+  &:after {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:before {
+    content: "";
+    top: 10px;
+    left: 4px;
+    z-index: 99;
+    border: solid;
+    border-width: 0 6px 6px 6px;
+    border-color: rgba(0, 0, 0, 0.8) transparent;
+  }
+
+  &:after {
+    content: attr(data-title);
+    left: 0;
+    top: 16px;
+    z-index: 98;
+    width: 350px;
+    padding: 8px 10px;
+    color: #fff;
+    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      position: absolute;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &:before {
+      top: 20px;
+    }
+
+    &:after {
+      top: 26px;
+    }
+  }
+}
